@@ -32,18 +32,13 @@ Character.init(
         allowNull: false,
     },
     char_class: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: DataTypes.INTEGER,
         references: {
             model: 'class',
             key: 'id',
           },
     },
     char_gold: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    char_xp: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },

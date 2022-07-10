@@ -102,4 +102,4 @@ come back to town with excalibur and game ends (party screen)
 
 
 
-![Idea](./assets/markdown/Dragon-Quest-X-Offline-Release-Date-Set-710x400.jpg)
+![Idea](./assets/images/Dragon-Quest-X-Offline-Release-Date-Set-710x400.jpg)

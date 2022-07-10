@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class characterClass extends Model {}
+class CharClass extends Model {}
 
-characterClass.init(
+CharClass.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,10 +13,8 @@ characterClass.init(
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
-  },
-  {
+  
     sequelize,
     timestamps: false,
     freezeTableName: true,
@@ -25,4 +23,4 @@ characterClass.init(
   }
 );
 
-module.exports = characterClass;
+module.exports = CharClass;
