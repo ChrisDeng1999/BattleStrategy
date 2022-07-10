@@ -15,6 +15,10 @@ Character.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    char_health: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     char_str: {
         type: DataTypes.INTEGER,
         allowNull: false,

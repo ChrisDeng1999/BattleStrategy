@@ -1,82 +1,45 @@
 const { CharClass } = require("../../models")
 
+const statBtn = document.getElementById("dice");
 
-init ()
+function createStats () {
+  
+  const getStr = Math.floor(Math.random() * 7);
+  const getDex= Math.floor(Math.random() * 7);
+  const getInt = Math.floor(Math.random() * 7);
+  const getLuk = Math.floor(Math.random() * 7);
 
-function init () {
-   
-    const getRandomStr = Math.floor(Math.random() * 7)
-    const getRandomDex= Math.floor(Math.random() * 7)
-    const getRandomInt = Math.floor(Math.random() * 7)
-    const getRandomLuk = Math.floor(Math.random() * 7)
+  let health = document.getElementById("health");
+  let str = document.getElementById("str");
+  let dex = document.getElementById("dex");
+  let int = document.getElementById("int");
+  let luk = document.getElementById("luk");
+  
+  health.innerHTML = "Health: "
+  healthStat = document.createTextNode(getStr + getDex)
+  health.appendChild(healthStat);
+  
+  str.innerHTML = "Str: "
+  strStat = document.createTextNode(getStr)
+  str.appendChild(strStat);
+  
+  dex.innerHTML = "Dex: "
+  dexStat = document.createTextNode(getDex)
+  dex.appendChild(dexStat);
+  
+  int.innerHTML = "Int: "
+  intStat = document.createTextNode(getInt)
+  int.appendChild(intStat);
+ 
+  luk.innerHTML = "Luk: "
+  lukStat = document.createTextNode(getLuk)
+  luk.appendChild(lukStat);
+  
+};
+
+statBtn.addEventListener("click", createStats);
 
 
 
-    function getHealth () {
-       const health = getRandomStr + getRandomDex   
-       return health
-    }
 
-    console.log("Health: " + getHealth());
-    console.log("Str: " + getRandomStr);
-    console.log("Dex: " + getRandomDex);
-    console.log("Int: " + getRandomInt);
-    console.log("Luk: " + getRandomLuk);
-
-    function getStrHealth () {
-        const newStrHealth = newStr + getRandomDex   
-        return newStrHealth
-     }
-    function getDexHealth () {
-        const newDexHealth = newDex + getRandomStr   
-        return newDexHealth
-     }
-
-
-    if (CharClass.id = 0) {
-
-        const newStr = getRandomStr * 2;
-
-        console.log("Class: " + "Warrior")
-        console.log("Health: " + getStrHealth());
-        console.log("Str: " + newStr);
-        console.log("Dex: " + getRandomDex);
-        console.log("Int: " + getRandomInt);
-        console.log("Luk: " + getRandomLuk);
-
-    }  else if (CharClass.id = 1) {
-
-        const newDex = getRandomDex * 2;
-
-        console.log("Class: " + "Hunter")
-        console.log("Health: " + getDexHealth());
-        console.log("Str: " + getRandomStr);
-        console.log("Dex: " + newDex);
-        console.log("Int: " + getRandomInt);
-        console.log("Luk: " + getRandomLuk);
-
-    }  else if (CharClass.id = 2) {
-
-        const newInt = getRandomInt * 2;
-    
-        console.log("Class: " + "Mage")
-        console.log("Health: " + getHealth());
-        console.log("Str: " + getRandomStr);
-        console.log("Dex: " + getRandomDex);
-        console.log("Int: " + newInt);
-        console.log("Luk: " + getRandomLuk);
-    } else if (CharClass.id = 3) {
-
-        const newLuk = getRandomLuk * 2;
-
-        console.log("Class: " + "Thief")
-        console.log("Health: " + getHealth());
-        console.log("Str: " + getRandomStr);
-        console.log("Dex: " + getRandomDex);
-        console.log("Int: " + getRandomInt);
-        console.log("Luk: " + newLuk);
-    }
-
-}
-init ()
 
