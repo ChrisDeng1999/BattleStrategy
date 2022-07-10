@@ -35,11 +35,20 @@ function createStats () {
   lukStat = document.createTextNode(getLuk)
   luk.appendChild(lukStat);
   
+  document.getElementById("confirm").className ="btn btn-primary";
+
 };
+
+
 
 statBtn.addEventListener("click", createStats);
 
 
+const charClass = document.getElementById("charClass");
+
+if (charClass == "Warrior") {
+  getStr * 2
+}
 
 
 
