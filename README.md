@@ -7,6 +7,8 @@
 
 ## User Login
 
+# USER MODEL
+
 ## Character Creation (1-4 Characters (Pokemon))
 
 Str, Luk, Dex, Int (HP is Str+Dex)
@@ -16,6 +18,7 @@ Class: Warrior (Str [Focused 2x the stat]), Thief (Luck), Mage (Int), Hunter (De
 
 Pick Your Name
 ```
+CHARACTER MODEL
 {
   id:
   char_name:
@@ -70,12 +73,14 @@ Shopping Center
 ### Adventure
   Weak Monster Side Scroller (after 4 encounters, option to fight a boss or go back to town)
   ```
+  MONSTER MODEL
   {
     monster_name:
     monster_health:
     monster_gold:
     monster_strength:
     monster_xp:
+    is_boss:
   }
   ```
   If character Dies, Revive at Temple?
@@ -84,15 +89,7 @@ Shopping Center
 ### Boss
 
 Bryan, Sammi, Michael (Slimes) Skeletron (head bryan, hands Sami And Michael) Bryan and his two goons Mike and Sammi
-```
-{
-  boss_name:
-  boss_health:
-  boss_gold:
-  boss_loot: excalibur
-  boss_xp:
-}
-```
+
 
 come back to town with excalibur and game ends (party screen)
 
