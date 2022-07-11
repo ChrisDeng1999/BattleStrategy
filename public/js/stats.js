@@ -1,10 +1,30 @@
 const { CharClass } = require("../../models")
 
 const statBtn = document.getElementById("dice");
-const confirmBtn = document.getElementById("confirm")
+const initalBtn = document.getElementById("initial");
+const startBtn = document.getElementById("start");
+const confirmBtn = document.getElementById("confirm");
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector("#info");
 const closeButton = document.querySelector(".close-button");
+
+function createCharacter () {
+  document.getElementById("charCard").className ="row mt-4";
+}
+
+initalBtn.addEventListener("click", createCharacter);
+
+function startGame () {
+  console.log("Hello")
+}
+
+startBtn.addEventListener("click", startGame);
+
+
+
+
+
+
 
 function toggleModal() {
   modal.classList.toggle("show-modal");
@@ -100,13 +120,12 @@ function createStats () {
   
 };
 
-function saveCharacter () {
+// function saveCharacter () {
 
-}
+// }
 
 statBtn.addEventListener("click", createStats);
-confirmBtn.addEventListener("click", saveCharacter);
+// confirmBtn.addEventListener("click", saveCharacter);
 trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
-
