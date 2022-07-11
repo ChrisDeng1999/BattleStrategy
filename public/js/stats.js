@@ -1,7 +1,21 @@
 const { CharClass } = require("../../models")
 
 const statBtn = document.getElementById("dice");
-const confirmBtn = document.getElementById("confirm");
+const modal = document.querySelector(".modal");
+const trigger = document.querySelector("#info");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+
 
 function createStats () {
   
@@ -73,12 +87,8 @@ function createStats () {
 
 statBtn.addEventListener("click", createStats);
 
-confirmBtn.addEventListener("click", finalChoice);
 
-
-const charClass = document.getElementById("charClass");
-
-function finalChoice() {
-
-}
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
 
