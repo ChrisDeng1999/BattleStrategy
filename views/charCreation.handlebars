@@ -1,47 +1,58 @@
-    <div class="row">
-      <div class="col-auto">
-        <h2>Welcome, Loser!</h2>
-      </div>
+  <div class="row">
+    <div class="col-auto">
+      <h2>Welcome, Loser!</h2>
     </div>
-    <button type = "button" class="btn btn-primary" id= "initial" >Create Character</button>
-    <button type = "button" class="btn btn-primary" id= "start" >Start Game</button>
-    <div class="row mt-4 hidden" id = "charCard">
-      <div class="col-md-6">
-        <h3>Create a Hero</h3>
-
-        <select name = "charClass" id = "charClass">
-          <option value = "Warrior">Warrior</option> 
-          <option value = "Hunter">Hunter</option> 
-          <option value = "Mage">Mage</option> 
-          <option value = "Thief">Thief</option> 
-        </select>
-        <button type = "button" class="btn btn-primary" id= "info" >Class Info</button>
-        <div class="modal">
-          <div class="modal-content">
-              <span class="close-button">&times;</span>
-              <h1>Warrior = 2x Str</h1>
-              <h1>Hunter = 2x Dex</h1>
-              <h1>Mage = 2x Int</h1>
-              <h1>Thief = 2x Luk</h1>
-              <h1>Attack for Warriros = Str</h1>
-              <h1>Attack for Hunter = Dex</h1>
-              <h1>Attack for Mage = Int</h1>
-              <h1>Attack for Thief = Luk</h1>
-          </div>
-        </div>
-        <div class = "container">
-            <h4 id = "health">Health: </h4>
-            <h4 id = "attack">Attack: </h4>
-            <h4 id = "str">Str: </h4>
-            <h4 id = "dex">Dex: </h4>
-            <h4 id = "int">Int: </h4>
-            <h4 id = "luk">Luk: </h4>
-    
+  </div>
+  <button type = "button" class="btn btn-primary" id= "initial" >Create Character</button>
+  <button type = "button" class="btn btn-primary" id= "start" >Start Game</button>
+  <button type = "button" class="btn btn-primary" id= "info" >More Info</button>
+  <div id = "myModal" class="modal">
+    <div class="modal-content">
+      <span class="ml-5 close-button" id ="close">&times;</span>
+      <div id = "charCard">
+        <div class="modal-body">
+          <h1>Please Name Your Character</h1>
+          <input type = "text" placeholder="Name"></input>
+          <br>
+          <select name = "charClass" id = "charClass">
+            <option value = "Warrior">Warrior</option> 
+            <option value = "Hunter">Hunter</option> 
+            <option value = "Mage">Mage</option> 
+            <option value = "Thief">Thief</option> 
+          </select>
+          <br>
+          <div class = "container">
+            <h4 class="text-warning" id = "health">Health: </h4>
+            <h4 class="text-info" id = "attack">Attack: </h4>
+            <h4 class="text-danger" id = "str">Str: </h4>
+            <h4 class="text-success" id = "dex">Dex: </h4>
+            <h4 class="text-primary" id = "int">Int: </h4>
+            <h4 class="text-secondary" id = "luk">Luk: </h4>
+            
             <button type = "button" class="btn btn-primary" id= "dice" >Randomize Stats</button>
             <button type = "button" class="btn btn-primary hidden" id= "confirm" >Confirm</button>
+          </div>
+          
         </div>
-        
-        </div>
+      </div>
     </div>
+  </div>
+  <div id = "myModal1" class="modal" >
+    <div class="modal-content">
+      <span class="close-button1" id="close1">&times;</span>
+      <h1 class="text-danger">Warrior = 2x Str</h1>
+      <h1 class="text-success">Hunter = 2x Dex</h1>
+      <h1 class="text-primary">Mage = 2x Int</h1>
+      <h1 class="text-secondary">Thief = 2x Luk</h1>
+      <h1 class="text-danger">Attack for Warriros = Str</h1>
+      <h1 class="text-success">Attack for Hunter = Dex</h1>
+      <h1 class="text-primary">Attack for Mage = Int</h1>
+      <h1 class="text-secondary">Attack for Thief = Luk</h1>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
 
 <script src="./js/stats.js"></script>

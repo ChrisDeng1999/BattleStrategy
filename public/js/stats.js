@@ -1,16 +1,15 @@
 const { CharClass } = require("../../models")
 
 const statBtn = document.getElementById("dice");
-const initalBtn = document.getElementById("initial");
+const initialBtn = document.getElementById("initial");
 const startBtn = document.getElementById("start");
 const confirmBtn = document.getElementById("confirm");
-const modal = document.querySelector(".modal");
-const trigger = document.querySelector("#info");
+const modal = document.querySelector("#myModal");
+const modal1 = document.querySelector("#myModal1");
+const info = document.querySelector("#info");
 const closeButton = document.querySelector(".close-button");
+const closeButton1 = document.querySelector(".close-button1");
 
-function createCharacter () {
-  document.getElementById("charCard").className ="row mt-4";
-}
 
 
 function startGame () {
@@ -26,28 +25,27 @@ function startGame () {
   }
 }
 
-
-function saveCharacter () {
-  const response = await fetch('/api/chars/login', {
-    method: 'POST',
-    body: JSON.stringify({ email, password }),
-    headers: { 'Content-Type': 'application/json' },
-  });
-  if (response.ok) {
-    document.location.replace('/profile');
-  } else {
-    alert(response.statusText);
+ 
+function toggleModal(e) {
+  if (e.target.id === "initial") {
+    modal.classList.add("show-modal")
+    modal.classList.remove("hide-modal")
+  }
+  if (e.target.id === "info") {
+    
+    modal1.classList.add("show-modal")
+    modal1.classList.remove("hide-modal")
   }
 }
 
-
-
-
-
-
-
-function toggleModal() {
-  modal.classList.toggle("show-modal");
+function closeModal(e) {
+  console.log(e.target.id)
+  if (e.target.id === "close") {
+    modal.classList.add("hide-modal")
+  }
+  if (e.target.id === "close1") {
+    modal1.classList.add("hide-modal")
+  }
 }
 
 function windowOnClick(event) {
@@ -140,11 +138,26 @@ function createStats () {
   
 };
 
+function confirmCharacter () {
+  const response = await fetch('/api/chars/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    document.location.replace('/profile');
+  } else {
+    alert(response.statusText);
+  }
+  
+}
+
 
 statBtn.addEventListener("click", createStats);
-confirmBtn.addEventListener("click", saveCharacter);
-trigger.addEventListener("click", toggleModal);
-closeButton.addEventListener("click", toggleModal);
-window.addEventListener("click", windowOnClick);
+confirmBtn.addEventListener("click", confirmCharacter);
 startBtn.addEventListener("click", startGame);
-initalBtn.addEventListener("click", createCharacter);
+initialBtn.addEventListener("click", toggleModal);
+info.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", closeModal);
+closeButton1.addEventListener("click", closeModal);
+window.addEventListener("click", windowOnClick);
