@@ -1,0 +1,41 @@
+* {
+    background-color: black;
+}
+
+.btn-container {
+    background-color: blue;
+    color: white;
+    padding: 15px 25px;
+    width: 4px;
+    height: auto;
+    border-radius: 10%;
+    transition: 0.4s;
+
+}
+
+.btn-container:hover {
+    background-color: white;
+    color: blue;
+}
+
+.homeCenter {
+    width: 15px;
+    height: 10px;
+    background-color: white;
+    border-radius: 5%;
+    
+    
+}
+
+.homeH1Options {
+    text-align: center;
+    color: blue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+}
+
+.container {
+    display: inline-block;
+    
+}
