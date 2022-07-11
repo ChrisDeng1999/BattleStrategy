@@ -1,10 +1,11 @@
-const Character = require('./Character');
+const Character = require('./Character-info');
 const Monster = require('./Monster');
 const CharClass = require('./Character-class');
-const Users = require('./Users');
+// const Users = require('./Users');
+const User = require('./User');
 
 
-CharClass.belongsto(Character, {
+CharClass.belongsTo(Character, {
     foreignKey: 'char_class'
 })
 
@@ -16,6 +17,8 @@ Character.hasOne(CharClass, {
 module.exports = {
     Character,
     Monster,
-    Users,
+    // Users,
     CharClass,
+    User,
   };
+
