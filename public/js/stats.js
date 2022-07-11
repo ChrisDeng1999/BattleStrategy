@@ -12,13 +12,33 @@ function createCharacter () {
   document.getElementById("charCard").className ="row mt-4";
 }
 
-initalBtn.addEventListener("click", createCharacter);
 
 function startGame () {
-  console.log("Hello")
+  const response = await fetch('/api/chars/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    document.location.replace('/profile');
+  } else {
+    alert(response.statusText);
+  }
 }
 
-startBtn.addEventListener("click", startGame);
+
+function saveCharacter () {
+  const response = await fetch('/api/chars/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    document.location.replace('/profile');
+  } else {
+    alert(response.statusText);
+  }
+}
 
 
 
@@ -120,12 +140,11 @@ function createStats () {
   
 };
 
-// function saveCharacter () {
-
-// }
 
 statBtn.addEventListener("click", createStats);
-// confirmBtn.addEventListener("click", saveCharacter);
+confirmBtn.addEventListener("click", saveCharacter);
 trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
+startBtn.addEventListener("click", startGame);
+initalBtn.addEventListener("click", createCharacter);
