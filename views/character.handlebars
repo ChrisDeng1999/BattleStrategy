@@ -1,14 +1,13 @@
-  <div class="row">
-    <div class="col-auto">
-      <h2>Welcome, Loser!</h2>
-    </div>
+ 
+  <div class="text-center">
+    <h2>Welcome, {{name}}!</h2>
+    <button type = "button" class="btn btn-primary" id= "initial" >Create Character</button>
+    <button type = "button" class="btn btn-primary" id= "start" >Start Game</button>
+    <button type = "button" class="btn btn-primary" id= "info" >More Info</button>
   </div>
-  <button type = "button" class="btn btn-primary" id= "initial" >Create Character</button>
-  <button type = "button" class="btn btn-primary" id= "start" >Start Game</button>
-  <button type = "button" class="btn btn-primary" id= "info" >More Info</button>
+
   <div class = "row mt-4 justify-content-around"> 
   {{#each characters as |character|}}
-    <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
     <div class = "col-2 border text-center charCard">
       <p class= "font-weight-bold">Name: {{char_name}}</p>
       <p class= "font-weight-bold ">Class: {{char_class}}</p>
@@ -18,6 +17,7 @@
       <p class = "text-success ">Dexterity: {{char_dex}}</p>
       <p class = "text-primary ">Intelligence: {{char_int}}</p>
       <p class = "text-secondary ">Luck: {{char_luk}}</p>
+      <span><button class="btn btn-danger deleteBtn" data-id="{{id}}">DELETE</button></span>
     </div>
   {{/each}}
   </div>

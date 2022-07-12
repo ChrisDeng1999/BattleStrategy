@@ -7,6 +7,8 @@ const modal1 = document.querySelector("#myModal1");
 const info = document.querySelector("#info");
 const closeButton = document.querySelector(".close-button");
 const closeButton1 = document.querySelector(".close-button1");
+const deleteBtns = document.querySelectorAll(".deleteBtn");
+
 
 let health = document.getElementById("health");
 let attack = document.getElementById("attack");
@@ -163,6 +165,31 @@ async function confirmCharacter () {
 
 
 
+
+for (let i = 0; i < deleteBtns.length; i++) {
+  deleteBtns[i].addEventListener('click', deleteCharacter);
+}
+
+async function deleteCharacter (event) {
+  console.log("hello");
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+    console.log(id);
+    const response = await fetch(`/api/character/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/create');
+    } else {
+      alert('Failed to delete Character');
+    }
+  }
+}
+
+
+
+
 statBtn.addEventListener("click", createStats);
 confirmBtn.addEventListener("click", confirmCharacter);
 startBtn.addEventListener("click", startGame);
@@ -171,5 +198,6 @@ info.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", closeModal);
 closeButton1.addEventListener("click", closeModal);
 window.addEventListener("click", windowOnClick);
+
 
 
