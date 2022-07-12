@@ -15,14 +15,14 @@ let dex = document.getElementById("dex");
 let int = document.getElementById("int");
 let luk = document.getElementById("luk");
 
-function startGame () {
+async function startGame () {
   const response = await fetch('/api/chars/login', {
     method: 'POST',
     body: JSON.stringify({ email, password }),
     headers: { 'Content-Type': 'application/json' },
   });
   if (response.ok) {
-    document.location.replace('/profile');
+    document.location.replace('/create');
   } else {
     alert(response.statusText);
   }
@@ -66,7 +66,7 @@ function createStats () {
   const getLuk = Math.floor(Math.random() * 7);
   
   
-  health.innerHTML = "Health: "
+  health.innerHTML = ""
   if (charClass.value == "Warrior") {
     healthStat = document.createTextNode(getStr * 2 + getDex)
     health.appendChild(healthStat);
@@ -78,7 +78,7 @@ function createStats () {
     health.appendChild(healthStat);
   }
   
-  attack.innerHTML = "Attack: "
+  attack.innerHTML = ""
   if (charClass.value == "Warrior") {
     attackStat = document.createTextNode(getStr * 2)
     attack.appendChild(attackStat);
@@ -94,7 +94,7 @@ function createStats () {
   }
   
   
-  str.innerHTML = "Str: "
+  str.innerHTML = ""
   if (charClass.value == "Warrior") {
     strStat = document.createTextNode(getStr * 2)
     str.appendChild(strStat);
@@ -103,7 +103,7 @@ function createStats () {
     str.appendChild(strStat);
   }
   
-  dex.innerHTML = "Dex: "
+  dex.innerHTML = ""
   if (charClass.value == "Hunter") {
     dexStat = document.createTextNode(getDex * 2)
     dex.appendChild(dexStat);
@@ -112,7 +112,7 @@ function createStats () {
     dex.appendChild(dexStat);
   }
   
-  int.innerHTML = "Int: "
+  int.innerHTML = ""
   if (charClass.value == "Mage") {
     intStat = document.createTextNode(getInt * 2)
     int.appendChild(intStat);
@@ -122,7 +122,7 @@ function createStats () {
   }
   
   
-  luk.innerHTML = "Luk: "
+  luk.innerHTML = ""
   if (charClass.value == "Thief") {
     lukStat = document.createTextNode(getLuk * 2)
     luk.appendChild(lukStat);
@@ -137,14 +137,14 @@ function createStats () {
 
 async function confirmCharacter () {
   const characterCard = {
-    char_name:charName.value,
-    char_class:charClass.value,
-    char_health:health.value,
-    char_attack:attack.value,
-    char_str:str.value,
-    char_dex:str.value,
-    char_int:str.value,
-    char_luk:str.value,
+    char_name: charName.value,
+    char_class: charClass.value,
+    char_health: health.textContent,
+    char_attack: attack.textContent,
+    char_str: str.textContent,
+    char_dex: dex.textContent,
+    char_int: int.textContent,
+    char_luk: luk.textContent,
   }
   const response = await fetch('/api/character', {
     method: 'POST',
@@ -153,7 +153,7 @@ async function confirmCharacter () {
   });
 
   if (response.ok) {
-    document.location.replace('/profile');
+    document.location.replace('/create');
   } else {
     alert("Failed to create Character");
   }
