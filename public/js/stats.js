@@ -1,5 +1,3 @@
-const { CharClass } = require("../../models")
-
 const statBtn = document.getElementById("dice");
 const initialBtn = document.getElementById("initial");
 const startBtn = document.getElementById("start");
@@ -10,7 +8,12 @@ const info = document.querySelector("#info");
 const closeButton = document.querySelector(".close-button");
 const closeButton1 = document.querySelector(".close-button1");
 
-
+let health = document.getElementById("health");
+let attack = document.getElementById("attack");
+let str = document.getElementById("str");
+let dex = document.getElementById("dex");
+let int = document.getElementById("int");
+let luk = document.getElementById("luk");
 
 function startGame () {
   const response = await fetch('/api/chars/login', {
@@ -62,12 +65,6 @@ function createStats () {
   const getInt = Math.floor(Math.random() * 7);
   const getLuk = Math.floor(Math.random() * 7);
   
-  let health = document.getElementById("health");
-  let attack = document.getElementById("attack");
-  let str = document.getElementById("str");
-  let dex = document.getElementById("dex");
-  let int = document.getElementById("int");
-  let luk = document.getElementById("luk");
   
   health.innerHTML = "Health: "
   if (charClass.value == "Warrior") {
@@ -138,19 +135,32 @@ function createStats () {
   
 };
 
-function confirmCharacter () {
-  const response = await fetch('/api/chars/login', {
+async function confirmCharacter () {
+  const characterCard = {
+    char_name:charName.value,
+    char_class:charClass.value,
+    char_health:health.value,
+    char_attack:attack.value,
+    char_str:str.value,
+    char_dex:str.value,
+    char_int:str.value,
+    char_luk:str.value,
+  }
+  const response = await fetch('/api/character', {
     method: 'POST',
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({ characterCard }),
     headers: { 'Content-Type': 'application/json' },
   });
+
   if (response.ok) {
     document.location.replace('/profile');
   } else {
-    alert(response.statusText);
+    alert("Failed to create Character");
   }
-  
+
 }
+
+
 
 
 statBtn.addEventListener("click", createStats);
@@ -161,3 +171,5 @@ info.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", closeModal);
 closeButton1.addEventListener("click", closeModal);
 window.addEventListener("click", windowOnClick);
+
+
