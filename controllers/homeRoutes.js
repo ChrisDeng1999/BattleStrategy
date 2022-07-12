@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Character, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/home', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const characterData = await Character.findAll({
@@ -51,7 +51,7 @@ router.get('/create', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/create');
