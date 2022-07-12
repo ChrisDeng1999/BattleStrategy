@@ -27,7 +27,23 @@ router.get('/home', async (req, res) => {
   }
 });
 
+router.get('/adventure', withAuth, async (req, res) => {
+  res.render("adventure", {
+    logged_in : true
+  })
+})
 
+router.get('/shop', withAuth, async (req, res) => {
+  res.render("shop", {
+    logged_in : true
+  })
+})
+
+router.get('/temple', withAuth, async (req, res) => {
+  res.render("templecd ", {
+    logged_in : true
+  })
+})
 
 // Use withAuth middleware to prevent access to route
 router.get('/create', withAuth, async (req, res) => {
