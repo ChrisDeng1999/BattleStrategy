@@ -1,0 +1,17 @@
+.loginContainer {
+    text-align: center;
+}
+
+#email-login {
+    display: block;
+    /* text-align: center; */
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#password-login {
+    display: block;
+    /* text-align: center; */
+    margin-right: auto;
+    margin-left: auto;
+}
