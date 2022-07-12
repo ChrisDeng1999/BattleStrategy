@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 const router = require('express').Router();
 //const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');
@@ -37,6 +36,3 @@ const withAuth = require('../../utils/auth');
 // });
 
 module.exports = router;
-=======
-Char.create.req.body
->>>>>>> Stashed changes
