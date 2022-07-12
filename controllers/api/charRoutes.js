@@ -21,10 +21,11 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
+    console.log(req.params.id);
+    console.log(req.session.user_id);
     const charData = await Character.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
