@@ -6,13 +6,30 @@
   <button type = "button" class="btn btn-primary" id= "initial" >Create Character</button>
   <button type = "button" class="btn btn-primary" id= "start" >Start Game</button>
   <button type = "button" class="btn btn-primary" id= "info" >More Info</button>
+  <div class = "row mt-4 justify-content-around"> 
+  {{#each characters as |character|}}
+    <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+    <div class = "col-2 border text-center charCard">
+      <p class= "font-weight-bold">Name: {{char_name}}</p>
+      <p class= "font-weight-bold ">Class: {{char_class}}</p>
+      <p class = "yellow ">Health: {{char_health}}</p>
+      <p class = "text-info">Attack: {{char_attack}}</p>
+      <p class = "text-danger ">Strength: {{char_str}}</p>
+      <p class = "text-success ">Dexterity: {{char_dex}}</p>
+      <p class = "text-primary ">Intelligence: {{char_int}}</p>
+      <p class = "text-secondary ">Luck: {{char_luk}}</p>
+    </div>
+  {{/each}}
+  </div>
+  
+  
   <div id = "myModal" class="modal">
     <div class="modal-content">
       <span class="ml-5 close-button" id ="close">&times;</span>
       <div id = "charCard">
         <div class="modal-body">
           <h1>Please Name Your Character</h1>
-          <input type = "text" placeholder="Name"></input>
+          <input type = "text" placeholder="Name" id = "charName"></input>
           <br>
           <select name = "charClass" id = "charClass">
             <option value = "Warrior">Warrior</option> 
@@ -22,12 +39,12 @@
           </select>
           <br>
           <div class = "container">
-            <h4 class="text-warning" id = "health">Health: </h4>
-            <h4 class="text-info" id = "attack">Attack: </h4>
-            <h4 class="text-danger" id = "str">Str: </h4>
-            <h4 class="text-success" id = "dex">Dex: </h4>
-            <h4 class="text-primary" id = "int">Int: </h4>
-            <h4 class="text-secondary" id = "luk">Luk: </h4>
+            <h4 class="text-warning">Health: <span id="health"></span></h4>
+            <h4 class="text-info">Attack: <span id="attack"></span></h4>
+            <h4 class="text-danger">Str: <span id="str"></span></h4>
+            <h4 class="text-success">Dex: <span id="dex"></span></h4>
+            <h4 class="text-primary">Int: <span id="int"></span></h4>
+            <h4 class="text-secondary">Luk: <span id="luk"></span></h4>
             
             <button type = "button" class="btn btn-primary" id= "dice" >Randomize Stats</button>
             <button type = "button" class="btn btn-primary hidden" id= "confirm" >Confirm</button>
@@ -51,8 +68,6 @@
     </div>
   </div>
   
-  <script src="script.js"></script>
-</body>
-</html>
 
-<script src="./js/stats.js"></script>
+  
+<script src="/js/character.js"></script>

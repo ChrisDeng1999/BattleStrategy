@@ -48,3 +48,12 @@
 .hide-modal {
   display: none;
 }
+
+.charCard,
+.charCard p {
+  background-color: burlywood;
+}
+
+.yellow {
+  color: yellow;
+}
