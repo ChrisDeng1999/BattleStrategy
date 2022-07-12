@@ -11,7 +11,11 @@ Character.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    char_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    char_class: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -19,10 +23,14 @@ Character.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    char_attack: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     char_str: {
         type: DataTypes.INTEGER,
         allowNull: false,
-      },
+    },
     char_dex: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -35,24 +43,17 @@ Character.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    char_class: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'class',
-            key: 'id',
-          },
-    },
     char_gold: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        
     },
     char_level: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        
     },
     char_has_excalibur: {
         type: DataTypes.STRING,
-        allowNull: false,
+        
     },
     
   },
