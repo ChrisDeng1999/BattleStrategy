@@ -29,7 +29,7 @@ function changeBackgroundImage() {
 
 changeBackgroundImage ();
 
-async function startGame () {
+function startGame () {
  
   document.location.replace('/home');
  
