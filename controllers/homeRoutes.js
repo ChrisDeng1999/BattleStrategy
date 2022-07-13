@@ -29,7 +29,7 @@ router.get('/home', withAuth, async (req, res) => {
 
 router.get('/adventure', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
+  
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Character, 
@@ -60,9 +60,9 @@ router.get('/temple', withAuth, async (req, res) => {
   })
 })
 
-router.get('/fight', withAuth, async (req, res) => {
+router.get('/fightS', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
+    
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Character, 
@@ -72,7 +72,49 @@ router.get('/fight', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
     console.log(user);
-    res.render('fight', {
+    res.render('fightS', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+router.get('/fightM', withAuth, async (req, res) => {
+  try {
+    
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Character, 
+        limit: 4,}],
+  
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+    res.render('fightM', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+router.get('/fightB', withAuth, async (req, res) => {
+  try {
+    
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Character, 
+        limit: 4,}],
+  
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+    res.render('fightB', {
       ...user,
       logged_in: true
     });

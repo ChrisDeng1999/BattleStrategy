@@ -19,7 +19,7 @@ function backBtn () {
 
 function startBtn () {
  
-  document.location.replace('/fight');
+  document.location.replace('/fightS');
  
 }
 
