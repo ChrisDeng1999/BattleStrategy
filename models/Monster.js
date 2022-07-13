@@ -19,32 +19,36 @@ Monster.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    monster_gold: {
+    monster_attack: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    monster_gold: {
+      type: DataTypes.INTEGER,
+    
     },
     monster_strength: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+   
     },
     monster_xp: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+  
     },
     monster_sprite: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+ 
     },
     is_boss: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+  
     },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'gallery',
+    modelName: 'monster',
   }
 );
 
