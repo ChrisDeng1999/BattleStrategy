@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Character, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/home', async (req, res) => {
+router.get('/home', withAuth, async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const characterData = await Character.findAll({
@@ -28,9 +28,24 @@ router.get('/home', async (req, res) => {
 });
 
 router.get('/adventure', withAuth, async (req, res) => {
-  res.render("adventure", {
-    logged_in : true
-  })
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Character, 
+        limit: 4,}],
+  
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+    res.render('adventure', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 })
 
 router.get('/shop', withAuth, async (req, res) => {
@@ -45,6 +60,26 @@ router.get('/temple', withAuth, async (req, res) => {
   })
 })
 
+router.get('/fight', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Character, 
+        limit: 4,}],
+  
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+    res.render('fight', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 // Use withAuth middleware to prevent access to route
 router.get('/create', withAuth, async (req, res) => {
   try {

@@ -1,19 +1,6 @@
-<div class = "row space justify-content-around"> 
-  {{#each characters as |character|}}
-    <div class = "col-2 border text-center charCard">
-      <p class= "font-weight-bold">Name: {{char_name}}</p>
-      <p class= "font-weight-bold ">Class: {{char_class}}</p>
-      <p class = "yellow ">Health: {{char_health}}</p>
-      <p class = "text-info">Attack: {{char_attack}}</p>
-      <p class = "text-danger ">Strength: {{char_str}}</p>
-      <p class = "text-success ">Dexterity: {{char_dex}}</p>
-      <p class = "text-primary ">Intelligence: {{char_int}}</p>
-      <p class = "text-secondary ">Luck: {{char_luk}}</p>
-      <span><button class="btn btn-danger deleteBtn" data-id="{{id}}">DELETE</button></span>
-    </div>
-  {{/each}}
+<div class = "right"> 
+<button class="btn btn-primary" id="create">Back to Characters</button>
 </div>
-
 <div class="conainer">
   <a href="#">  
     <button class="btn-container" id="adventure">

@@ -79,3 +79,12 @@ body{
   background-color: rgb(179, 175, 175);
 }
 
+.right {
+  margin-left: 3.5%;
+}
+
+.monCard {
+  width: 200px;
+  margin-left: 45%;
+  background-color: burlywood;
+}
