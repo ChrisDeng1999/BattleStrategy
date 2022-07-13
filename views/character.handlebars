@@ -9,7 +9,7 @@
 
   <div class = "row space justify-content-around"> 
   {{#each characters as |character|}}
-    <div class = "col-2 border text-center charCard">
+    <div class = "col-2 text-center charCard">
       <p class= "font-weight-bold">Name: {{char_name}}</p>
       <p class= "font-weight-bold ">Class: {{char_class}}</p>
       <p class = "yellow ">Health: {{char_health}}</p>
@@ -24,8 +24,8 @@
   </div>
   
   
-  <div id = "myModal" class="modal">
-    <div class="modal-content">
+  <div id = "myModal" class="modal text-center">
+    <div class="modal-content charCreate">
       <span class="ml-5 close-button" id ="close">&times;</span>
       <div id = "charCard">
         <div class="modal-body">
@@ -40,7 +40,7 @@
           </select>
           <br>
           <div class = "container">
-            <h4 class="text-warning">Health: <span id="health"></span></h4>
+            <h4 class="yellow">Health: <span id="health"></span></h4>
             <h4 class="text-info">Attack: <span id="attack"></span></h4>
             <h4 class="text-danger">Str: <span id="str"></span></h4>
             <h4 class="text-success">Dex: <span id="dex"></span></h4>
@@ -55,8 +55,8 @@
       </div>
     </div>
   </div>
-  <div id = "myModal1" class="modal" >
-    <div class="modal-content">
+  <div id = "myModal1" class="modal text-center" >
+    <div class="modal-content charCreate">
       <span class="close-button1" id="close1">&times;</span>
       <h1 class="text-danger">Warrior = 2x Str</h1>
       <h1 class="text-success">Hunter = 2x Dex</h1>
