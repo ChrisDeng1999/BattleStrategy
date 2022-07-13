@@ -1,6 +1,7 @@
 const adventure = document.getElementById("adventure");
 const shop = document.getElementById("shop");
 const back = document.getElementById("create");
+const temple = document.getElementById("temple");
 
 function changeBackgroundImage() {
     document.body.style.backgroundImage = "url('/images_character/homepage_background.jpg')";
@@ -23,6 +24,10 @@ function startShop () {
   document.location.replace('/shop');
 }
 
+function startTemple () {
+  document.location.replace('/temple');
+}
+
 function backBtn () {
  
   document.location.replace('/create');
@@ -31,7 +36,5 @@ function backBtn () {
 
 adventure.addEventListener("click", startAdventure);
 shop.addEventListener("click", startShop);
-
-
-
+temple.addEventListener("click", startTemple);
 back.addEventListener("click", backBtn);

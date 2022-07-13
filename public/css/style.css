@@ -93,3 +93,9 @@ body{
   width: 114px;
   height: 122px;
 }
+
+.closed {
+  width: 15vw;
+  height: 20vh;
+  margin-top: 5%;
+}
