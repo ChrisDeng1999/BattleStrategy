@@ -46,12 +46,23 @@ const signupFormHandler = async (event) => {
 };
 
 function changeBackgroundImage() {
-  document.body.style.backgroundImage = "url('/images_character/login_background.png')";
+  document.body.style.backgroundImage = "url('/images_character/intro_page.jpg')";
   document.body.style.backgroundRepeat = "no-repeat";
   document.body.style.backgroundSize = "cover";
 }
 
 changeBackgroundImage ();
+
+
+const white = document.getElementById("log");
+
+white.style.color = "white";
+white.style.backgroundImage.opacity = "1"
+
+// const logColor = document.getElementsByClassName("logColor");
+
+// logColor.style.opacity = "1"
+
 
 document
   .querySelector('.login-form')
