@@ -6,16 +6,16 @@ const monsterData = require('./monsterData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const monsters = await Monster.Create(monsterData, {
+  const monsters = await User.Create(monsterData, {
     individualHooks: true,
     returning: true,
   });
   //trying to create monsters
  
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+  for (const monster of monsterData) {
+    await Monster.create({
+      ...monster,
+      monster_id: monsters[Math.floor(Math.random() * monsters.length)].id,
     });
   }
 

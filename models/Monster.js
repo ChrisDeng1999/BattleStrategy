@@ -15,6 +15,10 @@ Monster.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    monster_class: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     monster_health: {
       type: DataTypes.INTEGER,
       allowNull: false,

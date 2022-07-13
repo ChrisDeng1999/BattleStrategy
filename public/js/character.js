@@ -93,10 +93,10 @@ function createStats () {
     attackStat = document.createTextNode(getDex * 2)
     attack.appendChild(attackStat);
   } else if (charClass.value == "Mage") {
-    attackStat = document.createTextNode(getInt * 2)
+    attackStat = document.createTextNode(getInt * 3)
     attack.appendChild(attackStat);
   } else {
-    attackStat = document.createTextNode(getLuk * 2)
+    attackStat = document.createTextNode(getLuk * 3)
     attack.appendChild(attackStat);
   }
   
@@ -121,7 +121,7 @@ function createStats () {
   
   int.innerHTML = ""
   if (charClass.value == "Mage") {
-    intStat = document.createTextNode(getInt * 2)
+    intStat = document.createTextNode(getInt * 3)
     int.appendChild(intStat);
   } else {
     intStat = document.createTextNode(getInt)
@@ -131,7 +131,7 @@ function createStats () {
   
   luk.innerHTML = ""
   if (charClass.value == "Thief") {
-    lukStat = document.createTextNode(getLuk * 2)
+    lukStat = document.createTextNode(getLuk * 3)
     luk.appendChild(lukStat);
   } else {
     lukStat = document.createTextNode(getLuk)

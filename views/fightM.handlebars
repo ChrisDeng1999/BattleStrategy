@@ -1,24 +1,24 @@
 <div class = "row justify-content-center">
-    <button type = "button" class="btn btn-primary col-2 mx-4" id= "fight" >Fight</button>
     <button type = "button" class="btn btn-primary col-2 mx-4" id= "back" >Go Home</button>
+    <button type = "button" class="btn btn-primary col-2 mx-4" id= "fight" >Battle</button>
     <button type = "button" class="btn btn-primary col-2 mx-4" id= "next" >Next Fight</button>
 </div>
 
 
     <div class = "text-center my-5 border monCard">
-        {{!-- <img src = "/images_character/mike_img.jpg" alt = "image of our wonderful TA Mike" class = "my-2"> --}}
-        <p class= "font-weight-bold">Name: mon2</p>
-        <p class= "font-weight-bold ">Class: Minion</p>
-        <p class = "yellow ">Health: 25</p>
-        <p class = "text-info">Attack: 5</p>
+        <img src = "/images_character/mike_img.jpg" alt = "image of our wonderful TA Mike" class = "my-2">
+        <p class= "font-weight-bold">Name: Michael</p>
+        <p class= "font-weight-bold">Class: Minion</p>
+        <p class = "yellow">Health: <span id = "monster_health">30</span></p>
+        <p class = "text-info">Attack: <span id = "monster_attack">5</span></p>
     </div>
 <div class = "row space justify-content-around"> 
   {{#each characters as |character|}}
     <div class = "col-2 border text-center charCard">
       <p class= "font-weight-bold">Name: {{char_name}}</p>
       <p class= "font-weight-bold ">Class: {{char_class}}</p>
-      <p class = "yellow ">Health: {{char_health}}</p>
-      <p class = "text-info">Attack: {{char_attack}}</p>
+      <p class = "yellow">Health: <span id = "charHealth">{{char_health}}</span></p>
+      <p class = "text-info">Attack: <span id = "charAttack">{{char_attack}}</span></p>
     </div>
   {{/each}}
 </div>
