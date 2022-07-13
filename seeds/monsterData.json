@@ -1,7 +1,7 @@
 [
     {
         "monster_name": "mon1",
-        "monster_health": 15,
+        "monster_health": 20,
         "monster_attack": 3
     },
     {
@@ -11,7 +11,7 @@
     },
     {
         "monster_name": "mon3",
-        "monster_health": 35,
+        "monster_health": 40,
         "monster_attack": 7
     }
 ]

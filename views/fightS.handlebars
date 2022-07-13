@@ -1,0 +1,25 @@
+<div class = "row justify-content-center">
+    <button type = "button" class="btn btn-primary col-2 mx-4" id= "fight" >Fight</button>
+    <button type = "button" class="btn btn-primary col-2 mx-4" id= "back" >Go Home</button>
+    <button type = "button" class="btn btn-primary col-2 mx-4" id= "next" >Next Fight</button>
+</div>
+
+
+    <div class = "text-center my-5 border monCard">
+        {{!-- <img src = "/images_character/bryan_img.jpg" alt = "image of our wonderful TA Sammi" class = "my-2"> --}}
+        <p class= "font-weight-bold">Name: mon1</p>
+        <p class= "font-weight-bold ">Class: Minion</p>
+        <p class = "yellow ">Health: 20</p>
+        <p class = "text-info">Attack: 3</p>
+    </div>
+<div class = "row space justify-content-around"> 
+  {{#each characters as |character|}}
+    <div class = "col-2 border text-center charCard">
+      <p class= "font-weight-bold">Name: {{char_name}}</p>
+      <p class= "font-weight-bold ">Class: {{char_class}}</p>
+      <p class = "yellow ">Health: {{char_health}}</p>
+      <p class = "text-info">Attack: {{char_attack}}</p>
+    </div>
+  {{/each}}
+</div>
+<script src="/js/fightS.js"></script>
