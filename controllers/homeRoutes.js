@@ -55,7 +55,7 @@ router.get('/shop', withAuth, async (req, res) => {
 })
 
 router.get('/temple', withAuth, async (req, res) => {
-  res.render("templecd ", {
+  res.render("temple", {
     logged_in : true
   })
 })
