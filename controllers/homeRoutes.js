@@ -1,25 +1,25 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { Character, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/home', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    // const projectData = await Project.findAll({
-    //   include: [
-    //     {
-    //       model: User,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
+    const characterData = await Character.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
 
-    // // Serialize data so the template can read it
-    // const projects = projectData.map((project) => project.get({ plain: true }));
+    // Serialize data so the template can read it
+    const character = characterData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      //projects, 
+      character, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -27,40 +27,38 @@ router.get('/', async (req, res) => {
   }
 });
 
-// router.get('/project/:id', async (req, res) => {
-//   try {
-//     const projectData = await Project.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
+router.get('/adventure', withAuth, async (req, res) => {
+  res.render("adventure", {
+    logged_in : true
+  })
+})
 
-//     const project = projectData.get({ plain: true });
+router.get('/shop', withAuth, async (req, res) => {
+  res.render("shop", {
+    logged_in : true
+  })
+})
 
-//     res.render('project', {
-//       ...project,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.get('/temple', withAuth, async (req, res) => {
+  res.render("templecd ", {
+    logged_in : true
+  })
+})
 
-// // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+// Use withAuth middleware to prevent access to route
+router.get('/create', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      //include: [{ model: Project }],
+      include: [{ model: Character, 
+        limit: 4,}],
+  
     });
 
     const user = userData.get({ plain: true });
-
-    res.render('profile', {
+    console.log(user);
+    res.render('character', {
       ...user,
       logged_in: true
     });
@@ -69,14 +67,16 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/create');
     return;
   }
 
   res.render('login');
 });
+
+
 
 module.exports = router;

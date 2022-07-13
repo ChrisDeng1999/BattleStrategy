@@ -11,48 +11,52 @@ Character.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    char_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    char_class: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     char_health: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    char_attack: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     char_str: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
+        type: DataTypes.STRING,
+    },
     char_dex: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.STRING,
     },
     char_int: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
+        type: DataTypes.STRING,
+   },
     char_luk: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    char_class: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'class',
-            key: 'id',
-          },
+        type: DataTypes.STRING,
     },
     char_gold: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        
     },
     char_level: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        
     },
     char_has_excalibur: {
         type: DataTypes.STRING,
-        allowNull: false,
+        
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'user',
+          key: 'id'
+      },
     },
     
   },
