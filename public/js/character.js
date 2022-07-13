@@ -17,20 +17,32 @@ let dex = document.getElementById("dex");
 let int = document.getElementById("int");
 let luk = document.getElementById("luk");
 
+
+
+// document.body.style.backgroundImage = "url('/assets/images/character_creation_background.jpg')";
+
+function changeBackgroundImage() {
+  document.body.style.backgroundImage = "url('/images_character/character_creation_background.jpg')";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundSize = "cover";
+}
+
+changeBackgroundImage ();
+
 async function startGame () {
-  const response = await fetch('/api/chars/login', {
-    method: 'POST',
+  const response = await fetch('/api/character/login', {
+    method: 'GET',
     body: JSON.stringify({ email, password }),
     headers: { 'Content-Type': 'application/json' },
   });
   if (response.ok) {
-    document.location.replace('/create');
+    document.location.replace('/home');
   } else {
     alert(response.statusText);
   }
 }
 
- 
+
 function toggleModal(e) {
   if (e.target.id === "initial") {
     modal.classList.add("show-modal")
@@ -153,13 +165,13 @@ async function confirmCharacter () {
     body: JSON.stringify({ characterCard }),
     headers: { 'Content-Type': 'application/json' },
   });
-
+  
   if (response.ok) {
     document.location.replace('/create');
   } else {
     alert("Failed to create Character");
   }
-
+  
 }
 
 
@@ -169,7 +181,7 @@ async function confirmCharacter () {
 for (let i = 0; i < deleteBtns.length; i++) {
   deleteBtns[i].addEventListener('click', deleteCharacter);
 }
-
+0
 async function deleteCharacter (event) {
   console.log("hello");
   if (event.target.hasAttribute('data-id')) {
@@ -178,7 +190,7 @@ async function deleteCharacter (event) {
     const response = await fetch(`/api/character/${id}`, {
       method: 'DELETE',
     });
-
+    
     if (response.ok) {
       document.location.replace('/create');
     } else {

@@ -1,3 +1,13 @@
+* {
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Press Start 2P', cursive;
+  
+}
+
+body{
+  overflow-x: hidden;
+}
 .modal {
   position: fixed;
   left: 0;
@@ -56,4 +66,7 @@
 
 .yellow {
   color: yellow;
+}
+.space {
+  margin-top: 6%;
 }
