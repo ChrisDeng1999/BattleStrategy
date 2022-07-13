@@ -1,3 +1,5 @@
+let url = "";
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -24,7 +26,7 @@ const loginFormHandler = async (event) => {
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
-
+  console.log(url);
   const name = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
@@ -32,7 +34,7 @@ const signupFormHandler = async (event) => {
   if (name && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ url, name, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -65,7 +67,20 @@ document
   .addEventListener('submit', loginFormHandler);
 
 document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+  .querySelector('#signupBtn')
+  .addEventListener('click', signupFormHandler);
 
-
+  var myWidget = cloudinary.createUploadWidget({
+    cloudName: 'cdeng1999', 
+    uploadPreset: 'pfk7wqjo'}, (error, result) => { 
+      if (!error && result && result.event === "success") { 
+        console.log('Done! Here is the image info: ', result.info); 
+        url = result.info.url;
+      }
+    }
+  )
+  
+  document.getElementById("upload_widget").addEventListener("click", function(event){
+    event.preventDefault();  
+    myWidget.open();
+    }, false);
