@@ -45,6 +45,14 @@ const signupFormHandler = async (event) => {
 
 };
 
+function changeBackgroundImage() {
+  document.body.style.backgroundImage = "url('/images_character/login_background.png')";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundSize = "cover";
+}
+
+changeBackgroundImage ();
+
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);

@@ -29,19 +29,15 @@ Character.init(
     },
     char_str: {
         type: DataTypes.STRING,
-        allowNull: false,
     },
     char_dex: {
         type: DataTypes.STRING,
-        allowNull: false,
     },
     char_int: {
         type: DataTypes.STRING,
-        allowNull: false,
-    },
+   },
     char_luk: {
         type: DataTypes.STRING,
-        allowNull: false,
     },
     char_gold: {
         type: DataTypes.INTEGER,
