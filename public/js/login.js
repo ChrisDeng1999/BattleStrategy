@@ -59,10 +59,6 @@ const white = document.getElementById("log");
 white.style.color = "white";
 white.style.backgroundImage.opacity = "1"
 
-// const logColor = document.getElementsByClassName("logColor");
-
-// logColor.style.opacity = "1"
-
 
 document
   .querySelector('.login-form')
