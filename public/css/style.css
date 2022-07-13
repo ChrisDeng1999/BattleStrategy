@@ -70,3 +70,11 @@ body{
 .space {
   margin-top: 6%;
 }
+
+.logColor {
+  color: rgb(0, 0, 0);
+}
+
+.transparency {
+  background-color: rgb(179, 175, 175);
+}

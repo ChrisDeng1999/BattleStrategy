@@ -30,16 +30,9 @@ function changeBackgroundImage() {
 changeBackgroundImage ();
 
 async function startGame () {
-  const response = await fetch('/api/character/login', {
-    method: 'GET',
-    body: JSON.stringify({ email, password }),
-    headers: { 'Content-Type': 'application/json' },
-  });
-  if (response.ok) {
-    document.location.replace('/home');
-  } else {
-    alert(response.statusText);
-  }
+ 
+  document.location.replace('/home');
+ 
 }
 
 
