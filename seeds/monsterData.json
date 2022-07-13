@@ -1,16 +1,19 @@
 [
     {
-        "monster_name": "mon1",
+        "monster_name": "Sammi",
+        "monster_class": "Minion",
         "monster_health": 20,
         "monster_attack": 3
     },
     {
-        "monster_name": "mon2",
-        "monster_health": 25,
+        "monster_name": "Michael",
+        "monster_class": "Minion",
+        "monster_health": 30,
         "monster_attack": 5
     },
     {
-        "monster_name": "mon3",
+        "monster_name": "Bryan",
+        "monster_class": "Boss",
         "monster_health": 40,
         "monster_attack": 7
     }
