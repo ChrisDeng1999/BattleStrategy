@@ -1,6 +1,5 @@
 const white = document.getElementById("white");
 const back = document.getElementById("back");
-const next = document.getElementById("next");
 const fight = document.getElementById("fight");
 
 const monHealth = document.getElementById("monster_health");
@@ -76,5 +75,4 @@ white.style.color = "white";
 
 
 back.addEventListener("click", backBtn);
-next.addEventListener("click", nextBtn);
 fight.addEventListener("click", fightBtn);

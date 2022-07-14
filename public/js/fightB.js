@@ -1,6 +1,5 @@
 const white = document.getElementById("white");
 const back = document.getElementById("back");
-const next = document.getElementById("end");
 const fight = document.getElementById("fight");
 
 const monName = document.getElementById("monster_name");
@@ -80,5 +79,4 @@ changeBackgroundImage ();
 white.style.color = "white";
 
 back.addEventListener("click", backBtn);
-next.addEventListener("click", nextBtn);
 fight.addEventListener("click", fightBtn);

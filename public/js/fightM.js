@@ -1,6 +1,5 @@
 const white = document.getElementById("white");
 const back = document.getElementById("back");
-const next = document.getElementById("next");
 const fight = document.getElementById("fight");
 
 const monName = document.getElementById("monster_name");
@@ -48,27 +47,7 @@ function fightBtn() {
     }
 }
 
-    // var list = document.getElementsByClassName("charAttack");
-    // for (let item of list) {
-    //     var list = document.getElementsByClassName("charAttack");
-    //     for (let item of list) {
-    //         console.log('Attack DPS ' + item.innerHTML);
-    //         console.log('MonsterHealth ' +monHealth.innerHTML);
-    //         alert('Monster Health = ' + monHealth.innerHTML);
-    //         DP = parseInt(item.innerHTML);
-    //         DP = -DP
-    //         MonsterHealth = parseInt(monHealth.innerHTML);
-    //         if (MonsterHealth >= 0) {
-    //             monHealth.innerHTML = MonsterHealth + DP;
-    //         } else {
-    //             alert('Monster Dead...Moving On')
-    //             monHealth.innerHTML = "DEAD";
-    //             nextBtn();
-    //             break;
-    //         }
-    //         break;
-    //     }
-    //     nextBtn();
+
 
 white.style.color = "white";
 
@@ -97,5 +76,4 @@ function nextBtn() {
 white.style.color = "white";
 
 back.addEventListener("click", backBtn);
-next.addEventListener("click", nextBtn);
 fight.addEventListener("click", fightBtn);
