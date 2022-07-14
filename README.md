@@ -10,7 +10,9 @@ BattleStrategy is web game that allows users to create characters that they use 
 
 ## Installation
 
-To test the game yourself, you first have to clone the repository. You then type npm i into your terminal to make sure you have downloaded all the neccessary dependencies. After that you also have to create the database in a sql workbench. Now you are finally ready to start the game! You type npm start and once you type in localhost:3001 in your browser you will be taken to our login page.
+To test the game yourself, below is a link to the heroku page that the app is currently running on!
+
+https://benefique-chocolatine-69489.herokuapp.com/
 
 ![Image of login page](./public/images_character/readme_intro.jpg)
 
