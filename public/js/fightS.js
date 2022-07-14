@@ -72,6 +72,9 @@ function nextBtn() {
 
 white.style.color = "white";
 
+
+
+
 back.addEventListener("click", backBtn);
 next.addEventListener("click", nextBtn);
 fight.addEventListener("click", fightBtn);

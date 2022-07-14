@@ -168,9 +168,6 @@ async function confirmCharacter () {
 }
 
 
-
-
-
 for (let i = 0; i < deleteBtns.length; i++) {
   deleteBtns[i].addEventListener('click', deleteCharacter);
 }

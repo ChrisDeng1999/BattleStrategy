@@ -3,6 +3,7 @@ const back = document.getElementById("back");
 const next = document.getElementById("end");
 const fight = document.getElementById("fight");
 
+const monName = document.getElementById("monster_name");
 const monHealth = document.getElementById("monster_health");
 const monAttack = document.getElementById("monster_attack");
 
@@ -10,13 +11,15 @@ const charHealth = document.getElementsByClassName("charHealth");
 const charAttack = document.getElementsByClassName("charAttack");
 
 
+let monster_name = monName.textContent;
 let monster_health = parseInt(monHealth.textContent);
 let monster_attack = parseInt(monAttack.textContent);
 
+console.log(monster_name);
+console.log(monster_health);
 console.log(monster_attack);
 
-console.log(monster_health);
-
+let char_name = charName.textContent;
 let char_health = parseInt(charHealth.textContent);
 let char_attack = parseInt(charAttack.textContent); 
 
