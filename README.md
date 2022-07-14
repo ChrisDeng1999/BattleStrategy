@@ -1,102 +1,60 @@
-# BattleStrategy
+# ⚔️BattleStrategy
+
+## Table of Content
+- [Description](#description)
+- [Installation](#installation)
+
+## Description
+
+BattleStrategy is web game that allows users to create characters that they use to fight monsters and bosses with. This game is rated E for everyone should definitely give it and try. BattleStrategy first makes the user signup and from there they are able to create their first character to fight monsters with. You are only able to use 4 characters at a given time so make sure you carefully choose what class you want! When you create a character, each character will be given a random assortment of stats that you can randomize until you have a stats that you are happy with! 
+
+## Installation
+
+To test the game yourself, you first have to clone the repository. You then type npm i into your terminal to make sure you have downloaded all the neccessary dependencies. After that you also have to create the database in a sql workbench. Now you are finally ready to start the game! You type npm start and once you type in localhost:3001 in your browser you will be taken to our login page.
+
+![Image of login page](./public/images_character/readme_intro.jpg)
 
 
-# Outline
+After signing up and deciding if you would like a profile picture, you are then taken to the character creation page.
 
-## Key Features
+![Image of login page](./public/images_character/readme_character.jpg)
 
-## User Login
-
-# USER MODEL
-
-## Character Creation (1-4 Characters (Pokemon))
-
-Str, Luk, Dex, Int (HP is Str+Dex)
-(random roll each stat 1-6)
-
-Class: Warrior (Str [Focused 2x the stat]), Thief (Luck), Mage (Int), Hunter (Dex)
-
-Pick Your Name
-```
-CHARACTER MODEL
-{
-  id:
-  char_name:
-  char_str:
-  char_luk:
-  char_dex:
-  char_int:
-  char_class:
-  char_gold:
-  char_xp:
-  char_level:
-  char_has_excalibur:
-}
-```
-## Once Your In The Game
-
-Multiplayer - Turn Based (border Color Changes Based On Turn (Green/Blue/Red/Yellow))
-
-### Basic Map Layout 
-
-Shopping Center
-  Merchant
-  ```
-  {
-    {
-      id
-      product_name
-      product_cost
-    },
-    {
-      id
-      product_name
-      product_cost
-    },
-    {
-      id
-      product_name
-      product_cost
-    }
-  }
-  ```
-  Inn
-  ```
-  Sleep To Regain health
-  ```
-  
-  Temple
-  ```
-  revive allies
-  ```
-
-### Adventure
-  Weak Monster Side Scroller (after 4 encounters, option to fight a boss or go back to town)
-  ```
-  MONSTER MODEL
-  {
-    monster_name:
-    monster_health:
-    monster_gold:
-    monster_strength:
-    monster_xp:
-    is_boss:
-  }
-  ```
-  If character Dies, Revive at Temple?
-  )
-
-### Boss
-
-Bryan, Sammi, Michael (Slimes) Skeletron (head bryan, hands Sami And Michael) Bryan and his two goons Mike and Sammi
+Below is an example of what creating a character looks like.
+![Image of login page](./public/images_character/readme_character_creation.jpg)
 
 
-come back to town with excalibur and game ends (party screen)
+If you would like more info about the classes and how certain stats are calculated you can click the more info button. Below is an image of what that looks like.
+![Image of login page](./public/images_character/readme_classinfo.jpg)
 
 
+After you finish creating all the characters you like (remember you can only use 4 at a time) you can now click the start game and you are taken to the home page below. Here you have many options but there are three main buttons to progress in the game. Adventure, Shop, and Temple.
+![Image of login page](./public/images_character/readme_adventure.jpg)
 
 
+Here is an image of what our shop page and temple page looks like. Unfortunately adding functionality and game design incorporating these two locations are currently wishlist items that will be worked on in the future.
+![Image of login page](./public/images_character/readme_shop.jpg)
 
 
+![Image of login page](./public/images_character/readme_temple.jpg)
 
-![Idea](./assets/images/Dragon-Quest-X-Offline-Release-Date-Set-710x400.jpg)
+
+If you click the adventure button you are taken to this pre battle screen that redisplays the characters you have made and gives you option to either start battle or go back.
+
+![Image of login page](./public/images_character/readme_prebattle.jpg)
+
+Once you start battle you are taken to the first battle which is right below.
+
+![Image of login page](./public/images_character/readme_battle1.jpg)
+
+
+After beating the first level you may proceed to the second battle.
+
+![Image of login page](./public/images_character/readme_battle2.jpg)
+
+After beating the second level you are now at the last level. 
+
+![Image of login page](./public/images_character/readme_battle3.jpg)
+
+
+Hopefully you can beat the boss and win the game! Good Luck!
+
