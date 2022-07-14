@@ -7,7 +7,7 @@
 
     <div class = "text-center my-5 monCard">
         <img src = "/images_character/sammi_img.jpg" alt = "image of our wonderful TA Sammi" class = "my-2 pic">
-        <p class= "font-weight-bold">Name: Sammi</p>
+        <p class= "font-weight-bold">Name: <span id = "monster_name">Sammi</span></p>
         <p class= "font-weight-bold">Class: Minion</p>
         <p class = "yellow">Health: <span id = "monster_health">20</span></p>
         <p class = "text-info">Attack: <span id = "monster_attack">3</span></p>
@@ -15,7 +15,7 @@
 <div class = "row space justify-content-around"> 
   {{#each characters as |character|}}
     <div class = "col-2 text-center charCard">
-      <p class= "font-weight-bold">Name: {{char_name}}</p>
+      <p class= "font-weight-bold">Name: <span id = "charName">{{char_name}}</span></p>
       <p class= "font-weight-bold">Class: {{char_class}}</p>
       <p class = "yellow">Health: <span id = "charHealth">{{char_health}}</span></p>
       <p class = "text-info">Attack: <span id = "charAttack">{{char_attack}}</span></p>
