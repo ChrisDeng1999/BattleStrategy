@@ -1,13 +1,13 @@
 const white = document.getElementById("white");
 const back = document.getElementById("back");
-const next = document.getElementById("next");
+const next = document.getElementById("end");
 const fight = document.getElementById("fight");
 
 const monHealth = document.getElementById("monster_health");
 const monAttack = document.getElementById("monster_attack");
 
-const charHealth = document.getElementById("charHealth");
-const charAttack = document.getElementById("charAttack");
+const charHealth = document.getElementsByClassName("charHealth");
+const charAttack = document.getElementsByClassName("charAttack");
 
 
 let monster_health = parseInt(monHealth.textContent);
@@ -22,22 +22,37 @@ let char_attack = parseInt(charAttack.textContent);
 
 
 
-console.log(char_attack);
+console.table(charAttack.innerHTML);
 
-console.log(char_health);
+console.table(charHealth.innerHTML);
 
+function fightBtn() {
 
+    var list = document.getElementsByClassName("charAttack");
+    for (let item of list) {
+        console.log('Attack DPS ' + item.innerHTML);
+        console.log('MonsterHealth ' +monHealth.innerHTML);
+        alert('Monster Health = ' + monHealth.innerHTML);
+        DP = parseInt(item.innerHTML);
+        DP = -DP
+        MonsterHealth = parseInt(monHealth.innerHTML);
+        if (MonsterHealth >= 0) {
+            monHealth.innerHTML = MonsterHealth + DP;
+        } else {
+            monHealth.innerHTML = "DEAD";
+            alert("You Won!")
+            nextBtn();
+            break;
+        }
+    }
+}
 
 
 white.style.color = "white";
 
-function changeBackgroundImage() {
-    document.body.style.backgroundImage = "url('/images_character/bryan_background.webp')";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
-  }
-  
-changeBackgroundImage ();
+
+
+
 
 
 function backBtn () {
@@ -48,12 +63,19 @@ function backBtn () {
 
 function nextBtn () {
  
-    document.location.replace('/fightB');
+    document.location.replace('/home');
    
 }
 
-
+function changeBackgroundImage() {
+    document.body.style.backgroundImage = "url('/images_character/bryan_background.webp')";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+  }
+  
+changeBackgroundImage ();
 white.style.color = "white";
 
 back.addEventListener("click", backBtn);
 next.addEventListener("click", nextBtn);
+fight.addEventListener("click", fightBtn);

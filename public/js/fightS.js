@@ -29,25 +29,19 @@ function fightBtn() {
     var list = document.getElementsByClassName("charAttack");
     for (let item of list) {
         console.log('Attack DPS ' + item.innerHTML);
+        console.log('MonsterHealth ' +monHealth.innerHTML);
+        alert('Monster Health = ' + monHealth.innerHTML);
         DP = parseInt(item.innerHTML);
+        DP = -DP
         MonsterHealth = parseInt(monHealth.innerHTML);
-        DPSign = Math.sign(monHealth.innerHTML);
-        console.log(DPSign)
-        if (DPSign = -1 || 0) {
-            console.log(DPSign + ' - ' + DP + ' - ' + monHealth.innerHTML);
+        if (MonsterHealth >= 0) {
+            monHealth.innerHTML = MonsterHealth + DP;
+        } else {
             monHealth.innerHTML = "DEAD";
-            sleep(1000);
+            alert("You Won!")
             nextBtn();
             break;
-        } else {
-
-            console.log(DPSign + ' - ' + DP + ' - ' + monHealth.innerHTML);
-            console.log('b ' + monHealth.innerHTML);
-            monHealth.innerHTML = MonsterHealth - DP;
-            console.log('a ' + monHealth.innerHTML)
         }
-        sleep(1000);
-        location.reload();
     }
 }
 
