@@ -1,6 +1,5 @@
 <div class = "row justify-content-center">
     <button type = "button" class="btn btn-primary col-2 mx-4" id= "back" >Go Home</button>
-    <button type = "button" class="btn btn-primary col-2 mx-4" id= "fight" >Battle</button>
     <button type = "button" class="btn btn-primary col-2 mx-4" id= "next" >Next Fight</button>
 </div>
 
@@ -14,11 +13,13 @@
     </div>
 <div class = "row space justify-content-around"> 
   {{#each characters as |character|}}
-    <div class = "col-2 text-center charCard">
+    <div class = "col-2 text-center charCard" id = "{{id}}">
+      <p class= "font-weight-bold">Character: <span id = "charId">{{id}}</span></p>
       <p class= "font-weight-bold">Name: <span id = "charName">{{char_name}}</span></p>
       <p class= "font-weight-bold">Class: {{char_class}}</p>
       <p class = "yellow">Health: <span id = "charHealth">{{char_health}}</span></p>
       <p class = "text-info">Attack: <span id = "charAttack">{{char_attack}}</span></p>
+      <button type = "button" class="btn btn-primary" id= "fight" >Battle</button>
     </div>
   {{/each}}
 </div>
