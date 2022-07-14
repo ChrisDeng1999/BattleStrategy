@@ -32,7 +32,7 @@ function fightBtn() {
     for (let item of list) {
         console.log('Attack DPS ' + item.innerHTML);
         console.log('MonsterHealth ' +monHealth.innerHTML);
-        alert('Monster Health = ' + monHealth.innerHTML);
+        // alert('Monster Health = ' + monHealth.innerHTML);
         DP = parseInt(item.innerHTML);
         DP = -DP
         MonsterHealth = parseInt(monHealth.innerHTML);
