@@ -8,6 +8,11 @@
 body{
   overflow-x: hidden;
 }
+
+header {
+  width: 100%;
+}
+
 .modal {
   position: fixed;
   left: 0;
@@ -146,4 +151,62 @@ body{
 .file-upload-container:hover {
   cursor: pointer;
   background: #3949AB;
+}
+
+
+.btn-container {
+  background-color: transparent;
+  color: white;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Press Start 2P', cursive;
+  font-size: x-large;
+  transition: 0.4s;
+  font-style: italic;
+
+}
+
+.shop:hover,
+.adventure:hover,
+.temple:hover {
+  background-color: transparent;
+  color: rgb(6, 199, 6);
+}
+
+
+.shop {
+  position: fixed;
+  right:  460px;
+  bottom: 360px;
+}
+
+.adventure {
+  position: fixed;
+  left: 450px;
+  bottom: 55px;
+
+}
+
+.temple  {
+  position: fixed;
+  right: 900px;
+  bottom: 300px;
+}
+
+.loginContainer {
+  text-align: center;
+}
+
+#email-login {
+  display: block;
+  /* text-align: center; */
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#password-login {
+  display: block;
+  /* text-align: center; */
+  margin-right: auto;
+  margin-left: auto;
 }
